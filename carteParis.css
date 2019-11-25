@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 66% 1fr;
+}
+
+#mapid {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 750px;
+  height: 325px;
+  position: relative;
+  border-radius: 30px  ;
+  grid-column : 1 ;
+
+}
+
+#enigmebur{
+  margin-left:30px;
+  margin-top: 40px;
+  margin-right: 50px;
+  height: 325px;
+  position: relative;
+  border: 30px  ;
+  grid-column : 2 ;
+  background: url('images/parch2.png') no-repeat;
+     background-size: 100%;
+
+}
+
+#txtbur{
+  margin-left:10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4em;
+
+}
+
+html {
+  background: url('images/parisfond.png') no-repeat;
+     background-size: 100%;
+}

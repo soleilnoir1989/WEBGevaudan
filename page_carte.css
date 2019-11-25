@@ -1,0 +1,13 @@
+#mapid {
+  margin-top: 200px;
+  margin: 0 auto;
+  width: 650px;
+  height: 450px;
+  position: relative;
+  border-radius: 30px  ;
+}
+
+html {
+  background: url('images/bois.jpg') no-repeat;
+     background-size: 100%;
+}
