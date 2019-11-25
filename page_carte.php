@@ -8,7 +8,9 @@
       echo 'Succès... ';
     }
 
-  $req1= "INSERT INTO objects (id,nom,x,y,lock) VALUES (1, 'griffe',400,600, 'true')";
+  $req1= "INSERT INTO `objects` (`id`, `nom`, `x`, `y`, `lock`) VALUES ('1', 'griffe', '600', '400', '0')";
+  $req2= "DELETE FROM `objects` WHERE id=1";
    mysqli_query($link, $req1);
 
  ?>
+
