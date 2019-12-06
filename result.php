@@ -12,7 +12,7 @@
     </div>
     <div class="" id="score">
 
-      <p>Hall of fame</p>
+      <p id="hall">Hall of fame</p>
 <div id="tabscore">
 
 
@@ -21,7 +21,7 @@
           $link = mysqli_connect('localhost:3306', 'root', 'root', 'objects');
 
 
-      $req= "SELECT pseudo, score FROM joueurs ORDER BY score ASC LIMIT 3";
+      $req= "SELECT pseudo, score FROM joueurs ORDER BY score DESC LIMIT 3";
       $result= mysqli_query($link, $req);
       while($row = mysqli_fetch_assoc($result)) {
         $tab[]=$row;
@@ -58,11 +58,8 @@
     </div>
     <div class="" id="texte">
 <h1>Bien joué! Vous avez trouvé la bête!</h1>
-
-
-
-
-    </div>
+<p>Après des jours et des jours de traque, vous réussissez à pousser la bête dans ses retranchements. C'est au fond d'une vallée étroite que vous et les quelques villageois à vous avoir suivi réussissent à l'appréhender.</p>
+  </div>
 
   </body>
 </html>
