@@ -1,13 +1,66 @@
-#mapid {
-  margin-top: 200px;
-  margin: 0 auto;
-  width: 650px;
-  height: 450px;
-  position: relative;
-  border-radius: 30px  ;
+html {
+
+  background: url('../images/bois.jpg') no-repeat;
+  background-size:110%;
 }
 
-html {
-  background: url('images/bois.jpg') no-repeat;
-     background-size: 100%;
+body{
+  cursor: url('../images/cursor.cur'), pointer;
+}
+
+#up{
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  height: 650px;
+}
+
+#mapid {
+  margin: 2%;
+  width: 98%;
+  height: 98%;
+  position: relative;
+  border-radius: 30px  ;
+  grid-column: 2;
+  cursor: url('../images/cursor.cur'), pointer;
+}
+
+#left{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: white;
+  border-color: black;
+  border-width: thick;
+}
+
+#item1{
+  background-color: green;
+  grid-row: 1;
+}
+
+#item2{
+  background-color: blue;
+  grid-row: 2;
+}
+#item3{
+  background-color: green;
+  grid-row: 3;
+}
+
+#bottom{
+  margin: 10px;
+  height: 220px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+#bourse{
+  grid-column: 1;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: auto;
+}
+#timer{
+  height: 200px;
+  color: white;
+  text-align: center;
 }
