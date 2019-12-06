@@ -1,18 +1,4 @@
 
-//sprite souris
-
-// mouse.mouseMove = function(mouseMovement){
-//   const sour= page_carte.getElementById('mouse');
-//   let xPosition;
-//   let yPosition;
-//   if (mouseMovement){
-//     xPosition=mouseMovement.pageX;
-//     yPosition=mouseMovement.pageY;
-//     sour.style.top= yPosition +1 + 'px';
-//     sour.style.left= xPosition + 'px';
-//   }
-// }
-
 
 // affichage map
 var map = L.map('mapid', {
@@ -105,7 +91,48 @@ var etie = L.marker([380, 690], {icon: village}).bindPopup("St_Etienne de Lugdar
 
 var cities = L.layerGroup([etie,rieu, saug, chely, marv, mend]);
 var lieux = L.layerGroup([egli,moul,enfa1,pret,crim,buch, pays1,mendiant,pays2,meun,pist,tave,mait,detr,atta,buis]);
+var nbItem=0;
+var path="../images/bourse.png";
 
+//ajout d'items
+
+// function addItem(item){
+//
+//   fetch('BDD.php', {
+//     method: 'post',
+//     body: item,
+//     headers: {
+//       'Content-Type': 'application/x-www-form-urlencoded'
+//     }
+//   })
+//   .then(r => r.text())
+//   .then(r => {
+//     document.getElementById("bottom").appendChild(r);
+//   })
+// }
+//
+// buch.addEventListener("click", function(event){
+//   additem(buch);
+// }
+
+let inventaire = 0;
+mend.addEventListener("click", function(event){
+  if (document.getElementById("bourse")){
+    console.log("item déjà présent dans l'inventaire");
+  } else {
+    inventaire = inventaire + 1;
+
+    var item = document.createElement("img");
+    item.setAttribute("id","bourse");
+    item.setAttribute("src","../images/bourse.png");
+    item.setAttribute("clas","spotlight");
+    document.getElementById("bottom").appendChild(item);
+    item.style.gridColumn = inventaire.toString();
+    item.style.witdh = "100%";
+    item.style.marginTop = "50px";
+    item.style.marginBottom = "auto";
+  }
+});
 
 //événements popups
 meun.addEventListener("click", function(event){
@@ -131,6 +158,15 @@ meun.addEventListener("click", function(event){
     console.log("Current Zoom Level =" + zoomlevel)
     });
 });
+
+//visionneuse d'images
+
+// mend.addEventListener("click", function(event){
+//   window.open("http://localhost/affichagepop.html","nom_popup","menubar=no, status=no, scrollbars=no, menubar=no, width=600, height=400");
+// });
+
+
+
 
 
 //zoom levels
@@ -179,4 +215,49 @@ var zoomlevel = map.getZoom();
 console.log("Current Zoom Level =" + zoomlevel)
 });
 
+
 //événements
+//mait.addEventListener("click", afficheTraces);
+// function afficheBuffer(){
+//     if (!document.getElementById("loupe")){
+//       var loupe = document.createElement("div");
+//       loupe.setAttribute("id", "loupe");
+//       document.getElementById("right").appendChild(loupe);
+//       console.log("buffer créé");
+//
+//       loupe.style.position = "sticky";
+//       loupe.style.height = "200px";
+//       loupe.style.witdh = "200px";
+//       loupe.style.color = "blue";
+//       //loupe.style.border = "8px ridge #A52A2A";
+//       //loupe.style.borderRadius = "50%";
+//       loupe.style.opacity = "0.25";
+//
+//
+//
+//     } else {
+//       console.log("Buffer déjà créé");
+//     }
+//   };
+
+
+// compteur de jours
+let jours = 70;
+function MaJ(){
+  let heure_actu = document.getElementById('timer');
+  if (jours==1) {
+    heure_actu.innerHTML = jours + " jour restant avant l'envoi des troupes royales.";
+  }
+  heure_actu.innerHTML = jours + " jours restants avant l'envoi des troupes royales.";
+  if (jours <10){
+    heure_actu.style.fontWeight = 'bolder';
+  }
+  if (jours==0) {
+    window.location.href = "carteParis.html";
+  }
+  jours=jours-1;
+  setTimeout(MaJ,13000);
+
+}
+
+setTimeout(MaJ,0);
