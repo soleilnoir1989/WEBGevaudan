@@ -51,3 +51,4 @@ console.log("Current Zoom Level =" + zoomlevel)
 bure.addEventListener("click", function(event){
     window.location.href = "page_carte.html";
 });
+
